@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+import AudioToolbox
 
 class ViewController: UIViewController {
 
@@ -33,6 +35,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func numberPressed(_ sender: UIButton) {
+        AudioServicesPlaySystemSound(SystemSoundID(1104))
         let number = sender.currentTitle!
         print(number)
         
@@ -49,6 +52,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func twoOperandSignPressed(_ sender: UIButton) {
+        AudioServicesPlaySystemSound(SystemSoundID(1104))
         operationSign = sender.currentTitle!
         firstOperand = currentInput
         stillTyping = false
@@ -65,6 +69,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func EqualitySignPressed(_ sender: UIButton) {
+        AudioServicesPlaySystemSound(SystemSoundID(1104))
         
         dotIsPlaced = false
         
@@ -86,6 +91,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func clearButtonPressed(_ sender: UIButton) {
+        AudioServicesPlaySystemSound(SystemSoundID(1104))
         displayResult.text = "0"
         firstOperand = 0
         secondOperand = 0
@@ -96,10 +102,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func plusMinusButtonPressed(_ sender: UIButton) {
+        AudioServicesPlaySystemSound(SystemSoundID(1104))
         currentInput = -currentInput
     }
     
     @IBAction func persentButtonPressed(_ sender: UIButton) {
+        AudioServicesPlaySystemSound(SystemSoundID(1104))
         if firstOperand == 0 {
             currentInput = currentInput / 100
         } else {
@@ -110,10 +118,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func corenButtonPressed(_ sender: UIButton) {
+        AudioServicesPlaySystemSound(SystemSoundID(1104))
         currentInput = sqrt (currentInput)
     }
     
     @IBAction func pointButtonPressed(_ sender: UIButton) {
+        AudioServicesPlaySystemSound(SystemSoundID(1104))
         if stillTyping && !dotIsPlaced {
             displayResult.text = displayResult.text! + "."
             dotIsPlaced = true
